@@ -19,6 +19,8 @@ app.use(express.json());
 //Routes
 app.all('/', (req, res)=> res.send({message:'Welcome to TODO API'}))
 
+app.use('/todos', require('./src/middlewares/errorHandler'));
+
 
 
 // ErrorHandler

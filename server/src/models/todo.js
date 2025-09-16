@@ -24,7 +24,10 @@ const todoSchema = new Schema({
         },
     priority: {
         type: String,
-        enum: [['Low', 'Medium', 'High'], 'Invalid value. Please enter one of these: "Low", "Medium", "High"'],
+        enum: {
+            values: ['Low', 'Medium', 'High'],
+            message: " Please enter one of these: 'Low, Medium, High'"
+        },
         default: "Medium"
     },
     isDone: {

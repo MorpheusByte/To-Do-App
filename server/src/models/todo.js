@@ -26,6 +26,10 @@ const todoSchema = new Schema({
         type: String,
         enum: [['Low', 'Medium', 'High'], 'Invalid value. Please enter one of these: "Low", "Medium", "High"'],
         default: "Medium"
+    },
+    isDone: {
+        type: Boolean,
+        default: false
     }
     
 },{

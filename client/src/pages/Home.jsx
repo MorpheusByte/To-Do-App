@@ -8,8 +8,10 @@ const Home = () => {
 
   const getTutorials = async () => {
     // const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/"
+    
+
     try {
-      const res = await axios(process.env.REACT_APP_URL)
+      const res = await axios(URL)
       console.log(res.data.result)
       setTutorials(res.data.result)
     } catch (error) {

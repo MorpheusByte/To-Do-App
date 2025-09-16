@@ -1,16 +1,18 @@
-"use strict"
+"use strict";
 
-// Express - ToDo Api
+/* -------------------------------------------
+            Express - Todo Api
+------------------------------------------- */
 
-const {} = require('mongoose');
+const { connect } = require('mongoose');
 
 module.exports = () => {
 
     const DB_URI = process.env?.DB_URI
 
-    if(!DB_URI) throw new Error('DB_URI is missing!');
+    if (!DB_URI) throw new Error('DB_URI is missing!');
 
     connect(DB_URI)
-    .then(()=> console.log(' * DB Connected *'))
-    .catch((err)=> console.log(' !DB Not Connected !', err));
+        .then(() => console.log('* DB Connected *'))
+        .catch((err) => console.log('! DB Not Connected !', err));
 }

@@ -1,8 +1,9 @@
-'use strict';
+"use strict";
+/* -------------------------------------------
+            Express - Todo Api
+------------------------------------------- */
 
-// Express - ToDo Api
-
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 
 const todoSchema = new Schema({
@@ -11,33 +12,36 @@ const todoSchema = new Schema({
         type: String,
         trim: true,
         required: true,
-        minlenght:3,
-        maxleght: 250
+        minlength: 3,
+        maxlength: 250
     },
 
     description: {
         type: String,
         trim: true,
         required: true,
-        minlenght: 5,
-        maxlenght: 250
-        },
+        minlength: 5,
+        maxlength: 250
+    },
+
     priority: {
         type: String,
         enum: {
             values: ['Low', 'Medium', 'High'],
-            message: " Please enter one of these: 'Low, Medium, High'"
+            message: "Please enter one of these: 'Low, Medium, High'"
         },
         default: "Medium"
     },
+
     isDone: {
         type: Boolean,
         default: false
     }
-    
-},{
+
+}, {
     collection: 'todos',
     timestamps: true
 });
+
 
 module.exports = model('Todo', todoSchema);

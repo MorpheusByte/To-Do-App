@@ -1,9 +1,11 @@
 "use strict";
-
+/* -------------------------------------------
+            Express - Todo Api
+------------------------------------------- */
 
 const router = require('express').Router();
 
-const todo = require('../controllers/todo')
+const todo = require('../controllers/todo');
 
 router.route('/').get(todo.list).post(todo.create)
 

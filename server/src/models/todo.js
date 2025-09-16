@@ -2,7 +2,7 @@
 
 // Express - ToDo Api
 
-const {Schema} = require('mongoose');
+const {Schema, model} = require('mongoose');
 
 
 const todoSchema = new Schema({
@@ -35,4 +35,6 @@ const todoSchema = new Schema({
 },{
     collection: 'todos',
     timestamps: true
-})
+});
+
+module.exports = model('Todo', todoSchema);

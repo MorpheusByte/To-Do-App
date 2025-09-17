@@ -1,6 +1,6 @@
 # @name listTodos
 
-post http://localhost:8000/todos
+get https://to-do-app-theta-three-38.vercel.app/todos
 Content-Type: application/json
 
 {

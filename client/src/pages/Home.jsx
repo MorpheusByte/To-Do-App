@@ -11,7 +11,7 @@ const Home = () => {
     
 
     try {
-      const res = await axios(URL)
+      const res = await axios(process.env.REACT_APP_URL)
       console.log(res.data.result)
       setTutorials(res.data.result)
     } catch (error) {
@@ -20,6 +20,7 @@ const Home = () => {
   }
 
   //? componentDidMount (ilk render sonrasi bir kere istek gonder)
+  console.log("Hi")
   useEffect(() => {
     getTutorials()
   }, [])
